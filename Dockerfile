@@ -1,7 +1,6 @@
 FROM ubuntu:12.04
 MAINTAINER Vo Minh Thu <noteed@gmail.com>
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list # 20103-08-24
 RUN apt-get update
 RUN apt-get install -q -y language-pack-en
 RUN update-locale LANG=en_US.UTF-8
