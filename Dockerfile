@@ -1,21 +1,8 @@
 FROM ubuntu:12.04
-MAINTAINER Vo Minh Thu <noteed@gmail.com>
 
 RUN apt-get update
 RUN apt-get install -q -y language-pack-en
 RUN update-locale LANG=en_US.UTF-8
-
-RUN apt-get install -q -y vim
-
-# Install an SSH server. This is used to update the configuration and
-# hot-reload it. Once Docker supports the `cp` command from host to container,
-# this can be removed.
-run apt-get -q -y install openssh-server
-# No idea why this directory is not created, but sshd needs it.
-run mkdir /var/run/sshd
-
-add insecure_id_rsa.pub /root/.ssh/authorized_keys
-run chown -R root:root /root/.ssh
 
 # Install dnsmasq
 RUN apt-get install -q -y dnsmasq

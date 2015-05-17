@@ -11,9 +11,6 @@ sed -i s/__LOCAL_IP__/$IP/ /etc/dnsmasq.conf
 # ... run it.
 dnsmasq --addn-hosts=/etc/addn-hosts
 
-# Run SSHD to allow to change dnsmasq's addn-hosts.
-/usr/sbin/sshd -D
-
 # Let the container live.
 while [ 1 ];
 do
